@@ -1,0 +1,21 @@
+{
+  "name": "brain-games",
+  "version": "0.0.1",
+  "description": "Brain Games school project",
+  "main": "index.js",
+  "scripts": {
+    "babel-node": "babel-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashpb/project-lvl1-s124.git"
+  },
+  "author": "Pavel Borisov",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-core": "*",
+    "babel-preset-env": "*",
+    "babel-preset-stage-0": "*"
+  }
+}
