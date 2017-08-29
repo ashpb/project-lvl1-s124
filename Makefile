@@ -8,5 +8,4 @@ publish:
 	npm publish
 
 lint:
-	npm run eslint src/index.js src/bin/brain-games.js
-	
+	npm run eslint src
