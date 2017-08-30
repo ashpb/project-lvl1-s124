@@ -1,6 +1,6 @@
 {
   "name": "brain-games-s124",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Brain Games school project",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,8 @@
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "repository": {
     "type": "git",
