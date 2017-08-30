@@ -20,7 +20,8 @@
   "author": "Pavel Borisov",
   "license": "ISC",
   "dependencies": {
-    "readline-sync": "*"
+    "readline-sync": "*",
+    "hexlet-pairs": "*"
   },
   "devDependencies": {
     "babel-cli": "*",
