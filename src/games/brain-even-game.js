@@ -9,4 +9,6 @@ const qaGenerator = () => {
   return cons(question, answer);
 };
 
+export const challengeDescription = 'Answer "yes" if number even otherwise answer "no"';
+
 export default qaGenerator;

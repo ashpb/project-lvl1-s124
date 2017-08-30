@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
 import { runGameFlow } from '..';
-import brainEven from '../games/brain-even-game';
+import qaGenerator, { challengeDescription } from '../games/brain-even-game';
 
-runGameFlow(brainEven, 'Answer "yes" if number even otherwise answer "no"');
+runGameFlow(qaGenerator, challengeDescription);
