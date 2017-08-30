@@ -1,5 +1,5 @@
 import { cons } from 'hexlet-pairs';
-import { getRandomInt, isEven } from '..';
+import { getRandomInt, isEven, runGameFlow } from '..';
 
 const qaGenerator = () => {
   const minNumber = 1;
@@ -9,6 +9,8 @@ const qaGenerator = () => {
   return cons(question, answer);
 };
 
-export const challengeDescription = 'Answer "yes" if number even otherwise answer "no"';
+const challengeDescription = 'Answer "yes" if number even otherwise answer "no"';
 
-export default qaGenerator;
+const runGame = () => runGameFlow(qaGenerator, challengeDescription);
+
+export default runGame;
