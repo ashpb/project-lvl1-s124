@@ -1,5 +1,5 @@
 import { cons } from 'hexlet-pairs';
-import { getRandomInt } from '..';
+import { getRandomInt, runGameFlow } from '..';
 
 const gcd = (num1, num2) => {
   if (num2 === 0) {
@@ -22,6 +22,8 @@ const qaGenerator = () => {
   return cons(question, answer);
 };
 
-export const challengeDescription = 'Find the greatest common divisor of given numbers.';
+const challengeDescription = 'Find the greatest common divisor of given numbers.';
 
-export default qaGenerator;
+const runGame = () => runGameFlow(qaGenerator, challengeDescription);
+
+export default runGame;
