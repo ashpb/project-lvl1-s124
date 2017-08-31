@@ -27,16 +27,6 @@ const congrats = (name) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export const getRandomInt = (min, max) => {
-  const minInt = Math.ceil(min);
-  const maxInt = Math.floor(max);
-  return Math.floor(Math.random() * ((maxInt - minInt) + 1)) + minInt;
-};
-
-
-export const isEven = number => (number % 2) === 0;
-
-
 export const runGameFlow = (qaGenerator, challengeDescription) => {
   const correctAnswersToWin = 3;
   welcome();
