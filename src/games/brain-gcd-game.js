@@ -1,5 +1,7 @@
 import { cons } from 'hexlet-pairs';
-import { getRandomInt, runGameFlow } from '..';
+import { runGameFlow } from '..';
+import { getRandomInt } from '../math-helper-functions';
+
 
 const gcd = (num1, num2) => {
   if (num2 === 0) {

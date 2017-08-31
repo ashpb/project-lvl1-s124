@@ -1,5 +1,6 @@
 import { cons } from 'hexlet-pairs';
-import { getRandomInt, runGameFlow } from '..';
+import { runGameFlow } from '..';
+import { getRandomInt } from '../math-helper-functions';
 
 
 const qaGenerator = () => {

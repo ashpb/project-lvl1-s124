@@ -1,5 +1,7 @@
 import { cons } from 'hexlet-pairs';
-import { getRandomInt, isEven, runGameFlow } from '..';
+import { runGameFlow } from '..';
+import { getRandomInt, isEven } from '../math-helper-functions';
+
 
 const qaGenerator = () => {
   const minNumber = 1;
