@@ -12,12 +12,25 @@ const incorrectAnswerMessage = (name, incorrect, correct) => {
   console.log(`Let's try again, ${name}!`);
 };
 
-const correctAnswerMessage = () => {
-  console.log('Correct!');
-};
-
 const congrats = (name) => {
   console.log(`Congratulations, ${name}!`);
+};
+
+const runQuestionRounds = (name, qaGenerator, numQuestions) => {
+  if (numQuestions === 0) {
+    congrats(name);
+    return true;
+  }
+  const qa = qaGenerator();
+  const question = car(qa);
+  const answer = cdr(qa);
+  const userAnswer = getUserAnswer(question);
+  if (answer === userAnswer) {
+    console.log('Correct!');
+    return runQuestionRounds(name, qaGenerator, numQuestions - 1);
+  }
+  incorrectAnswerMessage(name, userAnswer, answer);
+  return false;
 };
 
 const runGameFlow = (qaGenerator, challengeDescription) => {
@@ -26,26 +39,7 @@ const runGameFlow = (qaGenerator, challengeDescription) => {
   console.log(`${challengeDescription}\n`);
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}\n`);
-
-  let correctAnswers = 0;
-  let failed = false;
-  while (correctAnswers < correctAnswersToWin && !failed) {
-    const qa = qaGenerator();
-    const question = car(qa);
-    const answer = cdr(qa);
-    const userAnswer = getUserAnswer(question);
-    if (answer === userAnswer) {
-      correctAnswers += 1;
-      correctAnswerMessage();
-    } else {
-      failed = true;
-      incorrectAnswerMessage(name, userAnswer, answer);
-    }
-  }
-
-  if (!failed) {
-    congrats(name);
-  }
+  runQuestionRounds(name, qaGenerator, correctAnswersToWin);
 };
 
 export default runGameFlow;
