@@ -1,13 +1,6 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from 'hexlet-pairs';
 
-export const welcome = () => console.log('Welcome to the Brain Games!');
-
-export const getName = () => readlineSync.question('May I have your name? ');
-
-export const greet = (name) => {
-  console.log(`Hello, ${name}\n`);
-};
 
 const getUserAnswer = (question) => {
   console.log(`Question: ${question}`);
@@ -27,17 +20,17 @@ const congrats = (name) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export const runGameFlow = (qaGenerator, challengeDescription) => {
+const runGameFlow = (qaGenerator, challengeDescription) => {
   const correctAnswersToWin = 3;
-  welcome();
+  console.log('Welcome to the Brain Games!');
   console.log(`${challengeDescription}\n`);
-  const name = getName();
-  greet(name);
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}\n`);
 
   let correctAnswers = 0;
   let failed = false;
   while (correctAnswers < correctAnswersToWin && !failed) {
-    const qa = qaGenerator(correctAnswers);
+    const qa = qaGenerator();
     const question = car(qa);
     const answer = cdr(qa);
     const userAnswer = getUserAnswer(question);
@@ -54,3 +47,5 @@ export const runGameFlow = (qaGenerator, challengeDescription) => {
     congrats(name);
   }
 };
+
+export default runGameFlow;

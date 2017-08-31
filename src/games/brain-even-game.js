@@ -1,5 +1,5 @@
 import { cons } from 'hexlet-pairs';
-import { runGameFlow } from '..';
+import runGameFlow from '..';
 import { getRandomInt, isEven } from '../math-helper-functions';
 
 
