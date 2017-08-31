@@ -19,7 +19,7 @@ const congrats = (name) => {
 const runQuestionRounds = (name, qaGenerator, numQuestions) => {
   if (numQuestions === 0) {
     congrats(name);
-    return true;
+    return 0;
   }
   const qa = qaGenerator();
   const question = car(qa);
@@ -30,7 +30,7 @@ const runQuestionRounds = (name, qaGenerator, numQuestions) => {
     return runQuestionRounds(name, qaGenerator, numQuestions - 1);
   }
   incorrectAnswerMessage(name, userAnswer, answer);
-  return false;
+  return 0;
 };
 
 const runGameFlow = (qaGenerator, challengeDescription) => {
