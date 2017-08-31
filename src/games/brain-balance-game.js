@@ -18,8 +18,8 @@ const balance = (number) => {
 };
 
 const qaGenerator = () => {
-  const minNumber = 100;
-  const maxNumber = 10000;
+  const minNumber = 10;
+  const maxNumber = 9999;
   const num = getRandomInt(minNumber, maxNumber);
   const question = `${num}`;
   const answer = balance(num);
