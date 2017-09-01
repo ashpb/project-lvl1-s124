@@ -47,5 +47,3 @@ export const progressionToString = (progr, length, indexToObscure) => {
   }
   return output;
 };
-
-// output = (i === indexToObscure) ? `${output} ..` : `${output} ${getProgressionElement(progression, i)}`;
