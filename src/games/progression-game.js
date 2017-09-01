@@ -1,15 +1,7 @@
 import { cons } from 'hexlet-pairs';
 import runGameFlow from '..';
-import { getRandomInt } from '../math-helpers';
+import { getRandomInt, progression, getProgressionElement, progressionToString } from '../math-helpers';
 
-
-const buildQuestion = (firstNumber, step, length, missingNumberIndex) => {
-  if (length === 0) {
-    return '';
-  }
-  const currentNumber = (length === missingNumberIndex) ? '..' : String(firstNumber);
-  return `${currentNumber}  ${buildQuestion(firstNumber + step, step, length - 1, missingNumberIndex)}`;
-};
 
 const qaGenerator = () => {
   const progressionLength = 10;
@@ -19,9 +11,10 @@ const qaGenerator = () => {
   const maxStep = 29;
   const firstNumber = getRandomInt(minFirstNumber, maxFirstNumber);
   const step = getRandomInt(minStep, maxStep);
-  const missingNumberIndex = getRandomInt(1, progressionLength);
-  const question = buildQuestion(firstNumber, step, progressionLength, missingNumberIndex);
-  const answer = String(firstNumber + (step * (progressionLength - missingNumberIndex)));
+  const missingNumberIndex = getRandomInt(0, progressionLength - 1);
+  const progr = progression(firstNumber, step);
+  const question = progressionToString(progr, progressionLength, missingNumberIndex);
+  const answer = String(getProgressionElement(progr, missingNumberIndex));
   return cons(question, answer);
 };
 

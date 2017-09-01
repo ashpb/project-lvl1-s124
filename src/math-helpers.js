@@ -1,3 +1,6 @@
+import { cons, car, cdr } from 'hexlet-pairs';
+
+
 export const isEven = number => (number % 2) === 0;
 
 export const getRandomInt = (min, max) => {
@@ -31,3 +34,18 @@ export const isPrime = (number) => {
   }
   return true;
 };
+
+export const progression = (first, step) => cons(first, step);
+
+export const getProgressionElement = (progr, index) =>
+  car(progr) + (cdr(progr) * index);
+
+export const progressionToString = (progr, length, indexToObscure) => {
+  let output = '';
+  for (let i = 0; i < length; i += 1) {
+    output = `${output} ${(i === indexToObscure) ? '..' : getProgressionElement(progr, i)}`;
+  }
+  return output;
+};
+
+// output = (i === indexToObscure) ? `${output} ..` : `${output} ${getProgressionElement(progression, i)}`;
