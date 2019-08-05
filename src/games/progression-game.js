@@ -1,6 +1,8 @@
 import { cons } from 'hexlet-pairs';
 import runGameFlow from '..';
-import { getRandomInt, progression, getProgressionElement, progressionToString } from '../math-helpers';
+import {
+  getRandomInt, progression, getProgressionElement, progressionToString,
+} from '../math-helpers';
 
 
 const qaGenerator = () => {
