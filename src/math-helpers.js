@@ -37,8 +37,7 @@ export const isPrime = (number) => {
 
 export const progression = (first, step) => cons(first, step);
 
-export const getProgressionElement = (progr, index) =>
-  car(progr) + (cdr(progr) * index);
+export const getProgressionElement = (progr, index) => car(progr) + (cdr(progr) * index);
 
 export const progressionToString = (progr, length, indexToObscure) => {
   let output = '';
