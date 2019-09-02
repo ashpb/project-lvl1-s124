@@ -1,7 +1,7 @@
 import { cons, car, cdr } from 'hexlet-pairs';
 
 
-export const isEven = number => (number % 2) === 0;
+export const isEven = (number) => (number % 2) === 0;
 
 export const getRandomInt = (min, max) => {
   const minInt = Math.ceil(min);
